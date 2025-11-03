@@ -6,7 +6,7 @@
     sg_id: sg-04ef25cbf88a4d0ab
     zone_id: "Z00544453B01ZBG0FCY74"
     domain_name: "daws85s.store"
-    instance:
+    instances:
     - mongodb
   tasks:
   - name: create ec2 instance
