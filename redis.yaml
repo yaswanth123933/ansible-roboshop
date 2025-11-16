@@ -20,10 +20,10 @@
       replace: '0.0.0.0'
 
   - name: allow remote connections
-    ansible.builtin.replace:
+    ansible.builtin.lineinfile:
       path: /etc/redis/redis.conf
-      regexp: 'protected-mode yes'
-      replace: 'protected-mode no'
+      regexp: 'protected-mode'
+      line: 'protected-mode no'
 
   - name: start and enable redis
     ansible.builtin.service:
