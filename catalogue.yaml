@@ -20,11 +20,23 @@
       system: true
       shell: /sbin/nologin
       home: /app
+# safe to remove directory,because 2nd time if we run it will download freshly ,no error if does not exist
+  - name: remove app directory
+    ansible.builtin.file:
+      state: directory
+      path: /app
   
   - name: create app directory
     ansible.builtin.file:
       state: directory
       path: /app
+  
+  - name: Delete catalogue file
+    ansible.builtin.file:
+      path: /tmp/catalogue.zip
+      state: absent
+
+
   
   - name: download catalogue application
     ansible.builtin.get_url:
