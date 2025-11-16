@@ -23,8 +23,8 @@
   
   - name: create app directory
     ansible.builtin.file:
-    state: directory
-    path: /app
+      state: directory
+      path: /app
   
   - name: download catalogue application
     ansible.builtin.get_url:
